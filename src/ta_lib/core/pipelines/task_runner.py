@@ -108,7 +108,7 @@ def run_tracked_task(task_spec):
         parent_run_id = task_spec["__tracker_run_id"]
 
     try:
-        with start_experiment(context, expt_name, run_id=parent_run_id, nested=True):
+        with start_experiment(context, expt_name, nested=True):
             with start_experiment(
                 context, expt_name, run_name=f"{job_name}:{task_name}", nested=True
             ) as _:
